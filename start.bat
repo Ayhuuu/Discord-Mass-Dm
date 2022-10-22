@@ -1,1 +1,1 @@
-python main.py
+python Ayhu.py
