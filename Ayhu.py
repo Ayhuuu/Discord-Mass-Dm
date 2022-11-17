@@ -72,12 +72,12 @@ def spammer():
         sys.stdout.write(colorama.Fore.CYAN + "> ")
         print01("Tokeni Girin: ")
         tokens = input("")
-        r1 = requests.get('https://discord.com/api/v6/auth/login', headers={"Authorization": tokens})
+        r1 = requests.get('https://discord.com/api/v13/auth/login', headers={"Authorization": tokens})
         if "200" not in str(r1):
             sys.stdout.write(colorama.Fore.RED + "> ")
             print015("Yanlis Token")
         if "200" in str(r1):
-            r = requests.get(f'https://discord.com/api/v6/invite/{invite_code}', headers={"Authorization": tokens})
+            r = requests.get(f'https://discord.com/api/v13/invite/{invite_code}', headers={"Authorization": tokens})
             if "200" in str(r):
                 break
             if "403" in str(r):
@@ -124,7 +124,7 @@ def spammer():
     }
     done = 0
     while True:
-        r = requests.post("https://discord.com/api/v9/channels/"+str(ide)+"/messages", data=data, headers=headers)
+        r = requests.post("https://discord.com/api/v13/channels/"+str(ide)+"/messages", data=data, headers=headers)
         req = str(r)
         res = r.json()
         if "200" in req:
@@ -151,12 +151,12 @@ def mass():
         sys.stdout.write(colorama.Fore.CYAN + "> ")
         print01("Tokeni Girin: ")
         tokens = input("")
-        r1 = requests.get('https://discord.com/api/v6/auth/login', headers={"Authorization": tokens})
+        r1 = requests.get('https://discord.com/api/v13/auth/login', headers={"Authorization": tokens})
         if "200" not in str(r1):
             sys.stdout.write(colorama.Fore.RED + "> ")
             print015("Yanlis Token")
         if "200" in str(r1):
-            r = requests.get(f'https://discord.com/api/v6/invite/{invite_code}', headers={"Authorization": tokens})
+            r = requests.get(f'https://discord.com/api/v13/invite/{invite_code}', headers={"Authorization": tokens})
             if "200" in str(r):
                 break
             if "403" in str(r):
